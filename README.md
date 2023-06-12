@@ -23,9 +23,11 @@ This is non-blocking route means if you hit this route there is a loop which is 
 Hit '/' and you will get following response:
 ```
 {
-  "data": "2023-06-12T09:53:42.039Z"
+  "data": "2023-06-12T10:37:29.882Z"
 }
 ```
+![This is an image](https://raw.githubusercontent.com/nikhilkrdwivedi/nodejs_worker/master/screenshots/root.png)
+
 ##### Step-2: 
 Hit '/block-execution' and you will get following response:
 ```
@@ -36,6 +38,13 @@ Hit '/block-execution' and you will get following response:
 ```
 But this response will take sometime, in my case it took 39.76 seconds. When I hit '/' api it didn't return response. But after '/block-execution' api fullfilled response '/' returned response after 40.56 seconds.
 
+![This is an image](https://raw.githubusercontent.com/nikhilkrdwivedi/nodejs_worker/master/screenshots/block-excution-request.png)
+
+![This is an image](https://raw.githubusercontent.com/nikhilkrdwivedi/nodejs_worker/master/screenshots/block-excution-root-request.png)
+
+![This is an image](https://raw.githubusercontent.com/nikhilkrdwivedi/nodejs_worker/master/screenshots/block-excution-response.png)
+
+![This is an image](https://raw.githubusercontent.com/nikhilkrdwivedi/nodejs_worker/master/screenshots/block-excution-root-response.png)
 ##### Step-3: 
 Hit '/non-block-execution' and you will get following response:
 ```
@@ -45,13 +54,16 @@ Hit '/non-block-execution' and you will get following response:
 }
 ```
 here response time is 9.50 seconds because we offload excution to other worker thread.
+![This is an image](https://raw.githubusercontent.com/nikhilkrdwivedi/nodejs_worker/master/screenshots/non-block-excution.png)
+
+![This is an image](https://raw.githubusercontent.com/nikhilkrdwivedi/nodejs_worker/master/screenshots/root-non-block-excution.png)
 NOTE: i: 9999999 because we are passing query number with value 9999999.
 Also, you will get almost instant response when you hit '/' api.
 
 
 
 #### Resources
-[Worker threads in Nodejs](https://nodejs.org/api/worker_threads.html)
+[Worker threads in Nodejs](https://nodejs.org/api/worker_threads.html)\
 [Express Hello World!](https://expressjs.com/en/starter/hello-world.html)
 
 Happy Codings 👨‍💻
